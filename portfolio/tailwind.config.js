@@ -18,9 +18,15 @@ module.exports = {
         currentPink : "#ab8c8c",
         currentBlack: "#111011",
         currentColor: "#828283",
-        currentCol: "#18181b"
+        currentCol: "#18181b",
+        gris : "#131313"
 
-      }
+      },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        opensans: ['Open Sans', 'sans-serif'],
+      },
     },
   },
   darkMode: 'class',

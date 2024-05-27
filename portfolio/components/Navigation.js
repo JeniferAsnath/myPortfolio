@@ -16,9 +16,10 @@ const Navigation = ({ toggleNav }) => {
 
   const links = [
     { id: 1, title: "Accueil", href: "/" },
-    { id: 2, title: "À Propos", href: "/about" },
-    { id: 3, title: "Projets", href: "/projets" },
-    { id: 4, title: "Prestations", href: "/prestations" },
+    { id: 2, title: "Projets", href: "/projets" },
+    { id: 3, title: "Prestations", href: "/prestations" },
+    { id: 4, title: "À Propos", href: "/about" },
+
   ];
 
   const handleToggleNav = () => {
@@ -40,8 +41,8 @@ const Navigation = ({ toggleNav }) => {
         <h1 className="text-4xl font-signature ml-2">
           <Link
             className="link-underline link-underline-black text-currentColor dark:text-slate-300"
-            href="#"
-            target="_blank"
+            href=""
+            target=""
             rel="noreferrer"
           >
             Logo
