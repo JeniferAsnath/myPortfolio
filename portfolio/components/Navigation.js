@@ -33,12 +33,12 @@ const Navigation = ({ toggleNav }) => {
 
   return (
     <nav
-      className={`flex  justify-evenly  items-center   px-4 py-4 text-slate-300 bg-white fixed top-0 left-0 z-50 ${
+      className={`flex w-auto justify-around  items-center   py-4 text-slate-300 bg-white fixed top-0 left-0 z-50 ${
         darkMode ? "dark" : "light"
       }   bg-white w-screen dark:bg-black `}
     >
       <div className="flex-3 items-center ">
-        <h1 className="text-4xl font-signature ml-2">
+        <h1 className="text-4xl font-signature ">
           <Link
             className="link-underline link-underline-black text-currentColor dark:text-slate-300"
             href=""
@@ -49,7 +49,7 @@ const Navigation = ({ toggleNav }) => {
           </Link>
         </h1>
       </div>
-      <div className="flex-3  items-center">
+      {/* <div className="flex-3  items-center">
         <ul className="ml-auto hidden md:flex ">
           {links.map(({ id, title, href }) => (
             <li
@@ -62,7 +62,7 @@ const Navigation = ({ toggleNav }) => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
       <div
         className={`flex-3 items-center bg-${
           darkMode ? " accent-inherit" : " accent-inherit"
@@ -70,7 +70,7 @@ const Navigation = ({ toggleNav }) => {
       >
         <div className="flex items-center  rounded-lg">
           <div className="ml-auto flex items-center ">
-            <div className="flex items-center gap-3 mr-4">
+            <div className="flex items-center gap-3">
               <div className="flex gap-4 items-center">
                 <FontAwesomeIcon className="text-currentColor dark:text-slate-300 "  icon={faWhatsapp} size="lg" />
                 <Link href="https://www.linkedin.com/in/jenifer-asnath-lungwangu-031418280"><FontAwesomeIcon className="text-currentColor dark:text-slate-300"  icon={faLinkedin} size="lg" /></Link>
