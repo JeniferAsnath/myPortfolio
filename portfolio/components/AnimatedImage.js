@@ -22,7 +22,7 @@ export default function AnimatedImage({ src, alt, source, direction = "left", cl
       className={className}
     >
       <img
-        className="lg:rounded-tl-[180px] lg:rounded-tr-[180px] rounded-2xl sm:rounded-none w-full h-auto object-cover"
+        className=" rounded-2xl sm:rounded-none w-full h-auto object-cover"
         src={source}
         alt={alt}
       />

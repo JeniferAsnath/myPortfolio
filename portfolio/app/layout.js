@@ -25,8 +25,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.className} font-montserrat text-base m-0 p-0 box-border bg-white dark:bg-black text-currentColor dark:text-fuchsia-100`}
       >
-        <div className="box-border">
-          <div className="h-[80px] max-w-screen-lg mx-auto z-50">
+        <div className="box-border space-y-10">
+          <div className="h-[80px] w-screen mx-auto fixed top-0 left-0 ">
             <Navigation />
           </div>
           <div className="max-w-screen-xl mx-auto px-4">

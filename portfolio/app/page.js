@@ -22,45 +22,86 @@ import AppleAndroidIcon from "@/components/icons/AppleAndroidIcon";
 import AnimatedText from "@/components/AnimatedText";
 import AnimatedImage from "@/components/AnimatedImage";
 import ImageCarousel from "@/components/ImageCarousel";
+import { faLaptopCode, faMobileAlt, faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home({ Component, pageProps }) {
   const [dark, setDark] = useState(false);
 
+  const services = [
+    {
+      icon: faLaptopCode,
+      title: "Développement web",
+      question: "Vous avez besoin d'un site web professionnel pour votre entreprise ?",
+      details: [
+        "Création de sites web sur mesure",
+        "Optimisation SEO",
+        "Développement de sites e-commerce",
+        "Maintenance et mise à jour"
+      ]
+    },
+    {
+      icon: faMobileAlt,
+      title: "Développement mobile",
+      question: "Vous cherchez à atteindre vos clients sur leurs smartphones ?",
+      details: [
+        "Applications iOS et Android",
+        "Design réactif et intuitif",
+        "Intégration d'API",
+        "Support et maintenance"
+      ]
+    },
+    {
+      icon: faChalkboardTeacher,
+      title: "Besoin d'un formateur ?",
+      question: "Vous souhaitez apprendre à coder ou à utiliser des outils numériques ?",
+      details: [
+        "Cours de programmation",
+        "Ateliers pratiques",
+        "Coaching personnalisé",
+        "Support continu"
+      ]
+    }
+  ];
   return (
     <>
       <Section>
-        <div className="flex flex-col lg:flex-row justify-between items-center  mb-16">
-          <div className="w-1/2 order-1 lg:order-1 space-y-4 p-6 lg:p-16 items-end self-end justify-end ">
-            <AnimatedText className="space-y-3">
+        <div className="flex flex-col lg:flex-row justify-between items-center  mt-16">
+          <div className="w-[50%] -ml-32 -mb-6  order-1 lg:order-1 space-y-4 p-8 lg:p-16 items-end self-end justify-end ">
+            <AnimatedText className="space-y-3 ">
               <AnimatedText className="font-bold text-3xl py-6 text-center lg:text-left mb-4">
                 Bienvenue
                 <br /> sur mon Portfolio !
               </AnimatedText>
-              <p>
+              <p className="text-lg">
                 Je suis Jenifer Asnath, créatrice passionnée du web et du
                 mobile. Mon objectif est de réaliser vos aspirations digitales
                 avec des solutions innovantes.
               </p>
-              <p>
+              <p className="text-lg">
                 À travers chaque projet, je crée des expériences en ligne qui
                 captivent votre audience.
               </p>
             </AnimatedText>
-            <div className="mt-36 space-y-3">
-              <p className="font-bold text-lg">Prêt à briller en ligne ?</p>
-              <div className="bg-gray-400 py-2 px-6 float-right text-center md:w-48 w-full md:justify-center font-bold text-white dark:bg-white dark:text-dark">
+            <div className="-mr-20  space-y-4 ">
+              <p className="font-bold text-lg ">Prêt à briller en ligne ?</p>
+              <div className="  py-1 px-6 float-right text-center text-lg md:w-48 w-full md:justify-center font-bold dark:text-white text-dark">
                 <Link href="#">Me contacter</Link>
               </div>
             </div>
           </div>
-          <div className="flex-1 order-1 lg:order-1 px-4 w-full h-[65vh] ">
+          <div className=" -mb-20 h-96 w-52 dark:bg-gray-800 bg-slate-300 "></div>
+
+          <div className="w-[70%] order-1 lg:order-1   h-[65vh] ">
+            <div className="-mb-28 h-52 w-52 dark:bg-gris bg-currentColor "></div>
             <AnimatedImage
               direction="right"
-              source="/online-school-equipment-home(1).jpg"
+              source="/Snapchat-828531616.jpg"
               width={900}
-              height={900}
-              className="w-full h-full object-cover flex-1 order-1 lg:order-1 px-4"
+              height={900} text-gray-300
+              className="  z-50  object-cover flex-1 order-1 lg:order-1 px-24"
             />
+            <div className="float-right h-60 -mt-28  w-60 dark:bg-slate-300 bg-currentColor"></div>
+
           </div>
         </div>
         <AnimatedChevronDown />
@@ -107,7 +148,29 @@ export default function Home({ Component, pageProps }) {
           </div>
         </div>
       </Section>
-
+      <Section title={"Mes services"} >
+        <div className="container mx-auto mt-10">
+          <div className="flex flex-wrap justify-center">
+            {services.map((service, index) => (
+              <div key={index} className="w-full sm:w-1/2 lg:w-1/3 p-4">
+                <div className="text-center p-6 border-gray-200 rounded-lg transition duration-300">
+                  <FontAwesomeIcon icon={service.icon} className=" text-currentColor text-xl p-2 mb-4  rounded-full dark:bg-gray-400" />
+                  <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                  <p className="mb-4">{service.question}</p>
+                  <div className="text-left">
+                    {service.details.map((detail, i) => (
+                      <div key={i} className="flex items-center mb-2">
+                        <span className="mr-2 text-green-500">✓</span>
+                        <span>{detail}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
       <Section title={"Ma promesse"}>
         <div className="flex flex-col w-full md:flex-row lg:w-[80%] justify-center items-center m-auto py-8 px-6">
           <AnimatedImage
@@ -117,7 +180,7 @@ export default function Home({ Component, pageProps }) {
             height={200}
             className="md:w-1/3 p-10 w-1/2 flex-2 h-auto float-right  md:h-auto"
           />
-          <AnimatedText className="md:w-1/2 flex-1 justify-end items-end self-end m-auto p-10 w-full text-lg text-center md:text-left lg:p-10  lg:text-left  h-80">
+          <AnimatedText className="md:w-1/2 flex-1 justify-end items-end self-end m-auto2 p-10 w-full text-lg text-center md:text-left lg:p-10  lg:text-left  h-80">
             Mon engagement en tant que créatrice web et mobile est de
             transcender vos aspirations digitales en des réalisations
             mémorables. Chaque projet que je touche est imprégné de mon
